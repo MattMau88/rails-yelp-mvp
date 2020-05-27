@@ -1,0 +1,29 @@
+<h1>List of Restaurants</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <!-- Nice-to-have: add average rating per restaurant -->
+      <!-- <th>Rating</th> -->
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.category %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.phone_number %></td>
+        <!-- Nice-to-have: add average rating per restaurant -->
+        <!-- <td><#%= to be implemented %></td> -->
+        <td><%= link_to 'Show', restaurant, class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '+ Add New Restaurant', new_restaurant_path, class: "btn btn-primary" %>
